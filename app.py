@@ -111,4 +111,5 @@ def status():
 if __name__ == "__main__":
     print(f"\n  DocMind running  →  http://localhost:5000\n")
     # use_reloader=False avoids double-init of heavy models
-    app.run(debug=True, port=5010, use_reloader=False)
+    port = int(os.environ.get("PORT", 5010))
+    app.run(host="0.0.0.0", port=port)
